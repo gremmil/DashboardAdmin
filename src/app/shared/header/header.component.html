@@ -1,0 +1,22 @@
+
+  <ion-toolbar>
+        <ion-buttons slot="start">
+          <ng-container *ngIf="!mobile; else logoMobile">
+            <ion-menu-button menu="main-menu" autoHide="false"></ion-menu-button>
+            <ion-text>
+              <h3>
+                {{ namePageInput }}
+              </h3>
+            </ion-text>
+          </ng-container>
+          <ng-template #logoMobile>
+            <ion-menu-button menu="main-menu" autoHide="false"></ion-menu-button>
+            <ion-text>
+              <h3>
+                {{ namePageInput }}
+              </h3>
+            </ion-text>
+          </ng-template>
+        </ion-buttons>
+  </ion-toolbar>
+  

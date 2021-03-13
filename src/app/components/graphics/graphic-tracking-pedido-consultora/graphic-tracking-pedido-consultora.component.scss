@@ -1,0 +1,29 @@
+@import '../../../../theme/variables.scss';
+
+.row-cards-step-tracking{
+    position: absolute;
+    min-height: max-content !important;
+    min-height: -webkit-max-content !important;
+    ion-col{
+        ion-card{
+            position: absolute;
+            text-align: center;
+            left: 0;
+            right: 0;
+            background-color: rgba($color: #fff, $alpha: 0.8);
+            ion-img{
+                width: 100%;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: var(--ion-color-primary-ligth) !important;
+                border-radius: 50%;
+                border: solid 1px;
+                border-color: var(--ion-color-primary) !important;;
+                padding: 5px;
+            }
+            ion-card-header, ion-card-content{
+            }
+        }
+    }
+    
+}

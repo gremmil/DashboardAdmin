@@ -1,0 +1,82 @@
+<ion-header>
+  <app-header [namePageInput]="'Dashboard'"></app-header>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <ion-item>
+          <ion-label position="stacked">Fecha Inicio</ion-label>
+          <ion-input type="date"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-label position="stacked">Fecha Fin</ion-label>
+          <ion-input type="date"></ion-input>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-label position="floating">Distritos</ion-label>
+          <ion-select multiple="true">
+            <ion-select-option value="bacon">San Juan de Lurigancho</ion-select-option>
+            <ion-select-option value="olives">Miraflores</ion-select-option>
+            <ion-select-option value="xcheese">San Isidro</ion-select-option>
+            <ion-select-option value="peppers">Lince</ion-select-option>
+            <ion-select-option value="mushrooms">Santa Anita</ion-select-option>
+            <ion-select-option value="bacon">San Juan de Lurigancho</ion-select-option>
+            <ion-select-option value="olives">Miraflores</ion-select-option>
+            <ion-select-option value="xcheese">San Isidro</ion-select-option>
+            <ion-select-option value="peppers">Lince</ion-select-option>
+            <ion-select-option value="mushrooms">Santa Anita</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-label position="floating">Empresa</ion-label>
+          <ion-select multiple="true">
+            <ion-select-option value="bacon">Santa Natura</ion-select-option>
+            <ion-select-option value="olives">Natura Cosmeticos</ion-select-option>
+            <ion-select-option value="xcheese">El Lenguetazo</ion-select-option>
+            <ion-select-option value="peppers">Chill's</ion-select-option>
+            <ion-select-option value="mushrooms">Aldi Comunicaciones</ion-select-option>
+            <ion-select-option value="bacon">Santa Natura</ion-select-option>
+            <ion-select-option value="olives">Natura Cosmeticos</ion-select-option>
+            <ion-select-option value="xcheese">El Lenguetazo</ion-select-option>
+            <ion-select-option value="peppers">Chill's</ion-select-option>
+            <ion-select-option value="mushrooms">Aldi Comunicaciones</ion-select-option>
+          </ion-select>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-padding">
+        <app-graphic-sparklines [mobile]="mobileQuery"></app-graphic-sparklines>
+      </ion-col>
+      <ion-col size="12" size-sm="12" size-md="6" class="ion-padding">
+        <app-graphic-donut [mobile]="mobileQuery"></app-graphic-donut>
+      </ion-col>
+      <ion-col size="12" size-sm="12" size-md="6" class="ion-padding">
+        <app-graphic-dashboard-avance-evento [mobile]="mobileQuery"></app-graphic-dashboard-avance-evento>
+      </ion-col>
+      <ion-col size="12" size-sm="12" size-md="6" class="ion-padding">
+        <app-graphic-dashboard-area [mobile]="mobileQuery"></app-graphic-dashboard-area>
+      </ion-col>
+      <ion-col size="12" size-sm="12" size-md="6" class="ion-padding">
+        <app-graphic-dashboard-line-options [mobile]="mobileQuery"></app-graphic-dashboard-line-options>
+      </ion-col>
+      <!--<ion-col size="12" size-sm="12" size-md="6" class="ion-padding">
+        <app-table-dashboard-detalle-distrito [mobile]="mobileQuery"></app-table-dashboard-detalle-distrito>
+      </ion-col>
+      <ion-col size="12" size-sm="12" size-md="6" class="ion-padding">
+        <app-table-dashboard-pedidos-pendientes [mobile]="mobileQuery"></app-table-dashboard-pedidos-pendientes>
+      </ion-col>
+      <ion-col size="12" size-sm="12" size-md="6" class="ion-padding">
+        <app-graphic-dashboard-indicador-imagenes [mobile]="mobileQuery"></app-graphic-dashboard-indicador-imagenes>
+      </ion-col>-->
+    </ion-row>
+  </ion-grid>
+</ion-content>

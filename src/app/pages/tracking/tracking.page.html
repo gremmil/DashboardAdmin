@@ -1,0 +1,48 @@
+<ion-header>
+  <app-header [namePageInput]="'Tracking'"></app-header>
+</ion-header>
+
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ion-grid>
+    <ion-row>
+      <ion-col size="3">
+        <ion-item>
+          <ion-label position="floating">Nro Consultora</ion-label>
+          <ion-input type="text"></ion-input>
+          <ion-buttons slot="end">
+            <ion-button (click)="limpiarInput()" size="small">
+              <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="buscarConsultora()" size="small">
+              <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+          
+        </ion-item>
+      </ion-col>
+      <ion-col size="3">
+        <ion-item>
+          <ion-label position="floating">Nro Pedido</ion-label>
+          <ion-input type="text"></ion-input>
+          <ion-buttons slot="end">
+            <ion-button (click)="limpiarInput()" size="small">
+              <ion-icon slot="icon-only" name="close-outline"></ion-icon>
+            </ion-button>
+            <ion-button (click)="buscarPedido()" size="small">
+              <ion-icon slot="icon-only" name="search-outline"></ion-icon>
+            </ion-button>
+          </ion-buttons>
+        </ion-item>
+      </ion-col>
+
+    </ion-row>
+    <ion-row>
+      <ion-col size="12" class="ion-padding">
+        <app-table-tracking-pedidos-consultoras class="animate__animated animate__fadeIn"></app-table-tracking-pedidos-consultoras>
+      </ion-col>
+      <ion-col size="12" class="ion-padding">
+        <app-graphic-tracking-pedido-consultora class="animate__animated animate__fadeIn"></app-graphic-tracking-pedido-consultora>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

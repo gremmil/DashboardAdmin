@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>qr-scan</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-button (click)="commenzarScanneo()" expand="block" fill="clear" shape="round">
+      Click me
+    </ion-button>
+    <ion-img *ngIf="imgScanner" [src]="imgScanner"></ion-img>
+  </ion-list>
+  <zxing-scanner
+  [enable]="scannerEnabled"
+  [(device)]="desiredDevice"
+  [torch]="torch"
+  [formats] = "allowedFormats"
+  (torchCompatible)="onTorchCompatible($event)"
+  (camerasFound)="camerasFoundHandler($event)"
+  (camerasNotFound)="camerasNotFoundHandler($event)"
+  (scanSuccess)="scanSuccessHandler($event)"
+  (scanError)="scanErrorHandler($event)"
+  (scanFailure)="scanFailureHandler($event)"
+  (scanComplete)="scanCompleteHandler($event)"
+></zxing-scanner>
+
+
+</ion-content>

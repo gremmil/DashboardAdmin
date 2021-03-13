@@ -1,0 +1,8 @@
+[
+    {"id": 0, "numeroPlaca": "GA-001", "fecha": "2020/02/13 12:30", "cantidadDespachos": 3},
+    {"id": 1, "numeroPlaca": "GA-002", "fecha": "2020/02/13 13:30", "cantidadDespachos": 5},
+    {"id": 2, "numeroPlaca": "GA-003", "fecha": "2020/02/13 14:30", "cantidadDespachos": 3},
+    {"id": 3, "numeroPlaca": "GA-004", "fecha": "2020/02/13 15:30", "cantidadDespachos": 4},
+    {"id": 4, "numeroPlaca": "GA-005", "fecha": "2020/02/13 16:30", "cantidadDespachos": 5},
+    {"id": 5, "numeroPlaca": "GA-006", "fecha": "2020/02/13 17:30", "cantidadDespachos": 3}
+]

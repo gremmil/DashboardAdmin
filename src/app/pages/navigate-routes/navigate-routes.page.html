@@ -1,0 +1,99 @@
+<ion-header>
+  <app-header [namePageInput]="'Navegacion de Ruta'"></app-header>
+  <ion-segment *ngIf="ionSegmentVisibility" #ionSegment value="0" (ionChange)="cambioSegmento($event)">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-segment-button value="0">
+            <ion-label>EN RUTA: {{ direccionesNoVisitadas.length }}</ion-label>
+          </ion-segment-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-segment-button value="1">
+            <ion-label>FINALIZADOS: {{ direccionesVisitadas.length }} </ion-label>
+          </ion-segment-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-segment>
+</ion-header>
+<ion-content [fullscreen]="true" class="ion-padding">
+  <ng-template #searchRoutes>
+    <ion-card>
+      <ion-card-header>
+        <div id="contenedor-icons-tracking">
+          <ion-icon
+            name="location-sharp"
+            id="icon-location-tracking"
+          ></ion-icon>
+          <ion-icon name="search-sharp" id="icon-search-tracking"></ion-icon>
+        </div>
+        <!--<svg class="img-search-tracking">
+          <use href="assets/images/icons-tracking/location-sharp.svg#icon-location"></use>
+        </svg>
+        <svg class="img-search-tracking">
+          <use href="assets/images/icons-tracking/search-sharp.svg#icon-search"></use>
+        </svg>-->
+        <ion-card-title>Buscar Direcciones</ion-card-title>
+        <ion-card-subtitle
+          >Buscaremos todas los destinos que esten cerca a tu
+          ubicación</ion-card-subtitle
+        >
+      </ion-card-header>
+      <ion-card-content>
+        <ion-button
+          (click)="buscarDirecciones()"
+          expand="block"
+          fill="outline"
+          shape="round"
+        >
+          Buscar
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
+  </ng-template>
+
+  <ng-container *ngIf="direcciones; else searchRoutes">
+    <ion-list class="ion-no-padding animate__animated animate__fadeIn" #ionLista>
+      <ion-reorder-group (ionItemReorder)="ordenarSegmentos($event)" [disabled]="ionSegment?.value=='1'">
+        
+        <ion-item-sliding *ngFor="let direccion of direcciones">
+
+            <ion-item
+            button
+            (click)="obtenerDireccion(direccion)"
+          >
+            <ion-label>
+              <ion-text>
+                <h4>{{ direccion.nroPedido }}</h4>
+              </ion-text>
+              <ion-text color="medium">
+                <h4>{{ direccion.nom_personal }}</h4>
+              </ion-text>
+              <ion-note color="medium">
+                <h5>{{ direccion.urb_Barrio }}, {{ direccion.complemento}}</h5>
+              </ion-note>
+            </ion-label>
+            <ng-container *ngIf="direccion.flagVisitado == 0; else direccionTerminada">
+              <ion-reorder slot="end" class="ion-no-margin">
+                <ion-icon slot="icon-only" name="reorder-two"></ion-icon>
+              </ion-reorder>
+            </ng-container>
+            <ng-template #direccionTerminada>
+              <ion-icon name="checkmark-done" slot="end" color="primary"></ion-icon>
+            </ng-template>            
+          </ion-item>
+          <ion-item-options *ngIf="ionSegment?.value == '0'" side="end">
+            <ion-item-option (click)="iniciarMapa(direccion)">
+              <ion-icon slot="icon-only" name="locate"></ion-icon>
+            </ion-item-option>
+          </ion-item-options>
+          
+        </ion-item-sliding>
+      </ion-reorder-group>
+    </ion-list>
+    <ion-button *ngIf="ionSegment.value=='0'" (click)="finalizarRuta()" expand="full" color="primary">
+      FINALIZAR RUTA
+    </ion-button>
+  </ng-container>
+</ion-content>

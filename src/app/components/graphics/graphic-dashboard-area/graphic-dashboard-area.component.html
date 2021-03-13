@@ -1,0 +1,19 @@
+<ion-card class="ion-no-margin ion-no-padding">
+  <ion-card-content class="ion-no-margin ion-no-padding">
+        <div #chartArea>
+          <apx-chart
+            [series]="chartOptions?.series"
+            [chart]="chartOptions?.chart"
+            [legend]="chartOptions?.legend"
+            [title]="chartOptions?.title"
+            [colors]="chartOptions?.colors"
+            [stroke]="chartOptions?.stroke"
+            [fill]="chartOptions?.fill"
+            [markers]="chartOptions?.markers"
+            [tooltip]="chartOptions?.tooltip"
+            [xaxis]="chartOptions?.xaxis"
+            [yaxis]="chartOptions?.yaxis"
+          ></apx-chart>
+        </div>
+  </ion-card-content>
+</ion-card>

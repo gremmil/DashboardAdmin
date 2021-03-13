@@ -1,0 +1,41 @@
+<ion-row>
+  <ion-col size="9">
+    <ion-label>Pedido</ion-label>
+  </ion-col>
+  <ion-col size="3">
+    <ion-button fill="clear" class="boton-actualizar">
+      <ion-icon slot="icon-only" name="refresh"></ion-icon>
+    </ion-button>
+  </ion-col>
+  <ion-col size="12">
+    <div
+      id="contenedor-canvas"
+      (window:resize)="cambioTamanoContenedorCanvas()"
+      #contenedorCanvas
+    >
+      <ion-row class="row-cards-step-tracking" style="width: 100%; height: 100%;">
+        <ion-col
+          *ngFor="let item of imagenesTrackingPosition"
+          size="3"
+          class="ion-padding"
+        >
+          <ion-card class="ion-margin" [style.top]="item.position.top" [style.bottom]="item.position.bottom">
+            <ion-img
+              [src]="item.url"
+              [style.width]="item.width"
+              [style.height]="item.height"
+            ></ion-img>
+            <ion-card-header>
+              <ion-card-subtitle>Destination</ion-card-subtitle>
+              <ion-card-title>{{ item.text }}</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              Founded in 1829 on an isthmus
+            </ion-card-content>
+          </ion-card>
+        </ion-col>
+      </ion-row>
+      <canvas #canvas height="500px"></canvas>
+    </div>
+  </ion-col>
+</ion-row>

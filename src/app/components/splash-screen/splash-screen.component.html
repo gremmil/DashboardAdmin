@@ -1,0 +1,14 @@
+<div
+  class="app-splash-screen"
+  [ngStyle]="{ 
+    left: windowWidth, 
+    opacity: opacityChange,
+    transition: splashTransition
+  }"
+  *ngIf="showSplash"
+>
+  <div class="app-splash-inner">
+    <ion-img src="assets/logos/logo-transolyfer.png" class="app-logo"></ion-img>
+    <ion-img src="assets/splash-screen/three-dots.svg" class="app-loader"></ion-img>
+  </div>
+</div>

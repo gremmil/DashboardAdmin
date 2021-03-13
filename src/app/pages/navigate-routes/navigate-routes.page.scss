@@ -1,0 +1,47 @@
+@import "/src/theme/variables.scss";
+
+.img-search-tracking {
+  width: 100px !important;
+  fill: aqua !important;
+}
+ion-card {
+  text-align: center;
+  #contenedor-icons-tracking {
+    position: relative;
+    align-items: center;
+    min-height: 6rem;
+  }
+  #icon-location-tracking {
+    color: var(--ion-color-dark-shade);
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    font-size: 5rem;
+  }
+  #icon-search-tracking {
+    color: var(--ion-color-primary);
+    position: absolute;
+    top: 40%;
+    font-size: 3rem;
+  }
+  ion-button{
+      width: 200px;
+      margin-left: auto;
+      margin-right: auto;
+  }
+}
+ion-item-sliding{
+  ion-item {
+    --border-style: solid;
+    --border-color: var(--ion-color-primary);
+    ion-text{
+      h4,p {
+        line-height: 1.2;
+      }
+    }
+}
+}
+

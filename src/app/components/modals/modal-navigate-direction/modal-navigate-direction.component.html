@@ -1,0 +1,175 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title
+      >Pedido N°
+      {{ controlForm('nroPedido').value }}</ion-title
+    >
+    <ion-buttons slot="end">
+      <ion-button (click)="cerrarModal(false)">
+        <ion-icon slot="start" name="arrow-back"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+  <ion-segment #ionSegment value="1">
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6">
+          <ion-segment-button value="0">
+            <ion-label>Gestion</ion-label>
+          </ion-segment-button>
+        </ion-col>
+        <ion-col size="6">
+          <ion-segment-button value="1">
+            <ion-label>Informacion</ion-label>
+          </ion-segment-button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-segment>
+</ion-header>
+<ion-content fullscreen>
+    <ion-list *ngIf="ionSegment.value == '1'">
+      <ion-item-group>
+        <ion-item>
+          <ion-text>
+            <ion-label>Destinatario: </ion-label>
+          </ion-text>
+          <ion-text>
+            <ion-label color="medium" class="label-popover-navigate-route">
+              {{ direccion?.nom_personal }}
+            </ion-label>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text>
+            <ion-label>Entrega: </ion-label>
+          </ion-text>
+          <ion-text>
+            <ion-label color="medium" class="label-popover-navigate-route">
+              {{ direccion?.urb_Barrio }}, {{ direccion?.complemento }}
+            </ion-label>
+          </ion-text>
+        </ion-item>
+        <ion-item>
+          <ion-text>
+            <ion-label>Distrito: </ion-label>
+          </ion-text>
+          <ion-text>
+            <ion-label color="medium" class="label-popover-navigate-route">{{
+              direccion?.distrito
+            }}</ion-label>
+          </ion-text>
+        </ion-item>
+      </ion-item-group>
+    </ion-list>
+    <ion-list *ngIf="ionSegment.value == '0'">
+      <ion-item [formGroup]="svcFormOrderDirection.form">
+        <ion-label>Seleccione Evento</ion-label>
+        <ion-select formControlName="idEvento">
+          <ion-select-option
+            #selectEventPedido
+            *ngFor="let event of eventosPedido"
+            [value]="event.idEvento"
+            >{{ event.descripcion }}
+          </ion-select-option>
+        </ion-select>
+      </ion-item>
+      <ion-item [formGroup]="svcFormOrderDirection.form">
+        <ion-label position="floating">Observaciones</ion-label>
+        <ion-textarea formControlName="observaciones"></ion-textarea>
+      </ion-item>
+
+      <ion-grid
+        [formGroup]="svcFormOrderDirection.formImagenes"
+        *ngIf="controlForm('idEvento')?.value != 0"
+      >
+        <ion-row class="ion-no-margin ion-no-padding">
+          <ion-col size="6">
+            <ion-item-divider>
+              <ion-label>Foto Referencial</ion-label>
+              
+            </ion-item-divider>
+            <ion-card class="ion-no-margin ion-no-padding" color="ligth">
+              <ion-card-content class="ion-no-padding">
+                <ion-button
+                *ngIf="controlFormImg('imagenReferencial').value.data"
+                (click)="eliminarImagen('imagenReferencial')"
+                fill="clear"
+                class="ion-no-margin ion-no-padding btn-ion-flotante"
+              >
+                <ion-icon
+                  button
+                  slot="icon-only"
+                  name="close"
+                  class="ion-no-margin ion-no-padding"
+                  color="primary"
+                ></ion-icon>
+              </ion-button>
+                <ion-img
+                  *ngIf="controlFormImg('imagenReferencial').value.data"
+                  [src]="controlFormImg('imagenReferencial').value.data"
+                  (click)="tomarFoto('imagenReferencial')"
+                >
+                </ion-img>
+                <ion-icon
+                  *ngIf="!controlFormImg('imagenReferencial').value.data"
+                  name="camera-outline"
+                  class="icon-modal-navigate-direction"
+                  (click)="tomarFoto('imagenReferencial')"
+                  button
+                ></ion-icon>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="6">
+            <ion-item-divider>
+              <ion-label>Foto de Cargo</ion-label>
+            </ion-item-divider>
+            <ion-card class="ion-no-margin ion-no-padding" color="ligth">
+              <ion-card-content class="ion-no-padding">
+                <ion-button
+                *ngIf="controlFormImg('imagenCargo').value.data"
+                (click)="eliminarImagen('imagenCargo')"
+                fill="clear"
+                class="ion-no-margin ion-no-padding btn-ion-flotante"
+              >
+                <ion-icon
+                  button
+                  slot="icon-only"
+                  name="close"
+                  class="ion-no-margin ion-no-padding"
+                  color="primary"
+                ></ion-icon>
+              </ion-button>
+                <ion-img
+                  *ngIf="controlFormImg('imagenCargo').value.data"
+                  [src]="controlFormImg('imagenCargo').value.data"
+                  (click)="tomarFoto('imagenCargo')"
+                ></ion-img>
+                <ion-icon
+                  *ngIf="!controlFormImg('imagenCargo').value.data"
+                  name="camera-outline"
+                  class="icon-modal-navigate-direction"
+                  (click)="tomarFoto('imagenCargo')"
+                  button
+                ></ion-icon>
+              </ion-card-content>
+            </ion-card>
+          </ion-col>
+          <ion-col size="12">
+            <ion-button
+              (click)="onSubmit()"
+              [disabled]="
+                svcFormOrderDirection.form.invalid ||
+                svcFormOrderDirection.formImagenes.invalid
+              "
+              expand="full"
+              color="primary"
+            >
+              Confirmar Gestion
+            </ion-button>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-list>
+</ion-content>

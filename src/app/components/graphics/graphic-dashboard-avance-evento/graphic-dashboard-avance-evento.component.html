@@ -1,0 +1,23 @@
+
+
+<ion-card class="ion-no-margin ion-no-padding">
+  <!--<ion-card-header class="ion-justify-content-center">
+    <ion-card-title class="ion-text-center">Avance por Evento</ion-card-title>
+  </ion-card-header>-->
+  <ion-card-content class="ion-no-margin ion-no-padding">
+        <div #chartAvanceEvento>
+          <apx-chart
+            [series]="chartOptions?.series"
+            [chart]="chartOptions?.chart"
+            [dataLabels]="chartOptions?.dataLabels"
+            [plotOptions]="chartOptions?.plotOptions"
+            [yaxis]="chartOptions?.yaxis"
+            [xaxis]="chartOptions?.xaxis"
+            [fill]="chartOptions?.fill"
+            [title]="chartOptions?.title"
+            [legend]="chartOptions?.legend"
+          ></apx-chart>
+        </div>
+  </ion-card-content>
+
+</ion-card>
