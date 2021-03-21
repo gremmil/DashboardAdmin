@@ -1,0 +1,82 @@
+{
+    "Result": [
+        {
+            "IdEvento": 2,
+            "Descripcion": "Entregado",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "0"
+        },
+        {
+            "IdEvento": 3,
+            "Descripcion": "Ausente primera visita",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "0"
+        },
+        {
+            "IdEvento": 4,
+            "Descripcion": "Ausente segunda visita",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "0"
+        },
+        {
+            "IdEvento": 18,
+            "Descripcion": "Ausente tercera visita (R)",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "0"
+        },
+        {
+            "IdEvento": 35,
+            "Descripcion": "Ausente cuarta visita (R)",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "0"
+        },
+        {
+            "IdEvento": 7,
+            "Descripcion": "Dirección incorrecta",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "1"
+        },
+        {
+            "IdEvento": 8,
+            "Descripcion": "CN rechaza pedido",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "1"
+        },
+        {
+            "IdEvento": 31,
+            "Descripcion": "Oficina o local cerrado",
+            "FlagFotoApp": "0",
+            "FlagObsApp": "1"
+        },
+        {
+            "IdEvento": 32,
+            "Descripcion": "CN de viaje",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "0"
+        },
+        {
+            "IdEvento": 15,
+            "Descripcion": "Zona de dificil acceso / peligrosa",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "1"
+        },
+        {
+            "IdEvento": 33,
+            "Descripcion": "CN se mudó",
+            "FlagFotoApp": "1",
+            "FlagObsApp": "1"
+        },
+        {
+            "IdEvento": 34,
+            "Descripcion": "Pendiente de entrega",
+            "FlagFotoApp": "0",
+            "FlagObsApp": "1"
+        }
+    ],
+    "RespuestaServicio": {
+        "Error": false,
+        "CodigoError": null,
+        "MensajeError": "",
+        "MensajeDetalle": ""
+    }
+}
