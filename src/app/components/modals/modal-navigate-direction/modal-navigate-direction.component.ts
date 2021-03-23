@@ -44,8 +44,8 @@ export class ModalNavigateDirectionComponent implements OnInit {
   ngOnInit() {
     this.svcEventsOrder.getEventsOrder().subscribe(
       (res) => {
-        if (res.ok == true) {
-          this.eventosPedido = res.response;
+        if (res.Error == "200") {
+          this.eventosPedido = res.Resultado;
         }
       },
       (error) => console.error(error),

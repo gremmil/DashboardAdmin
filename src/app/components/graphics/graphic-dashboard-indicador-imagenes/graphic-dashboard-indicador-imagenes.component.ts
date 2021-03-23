@@ -56,6 +56,39 @@ export class GraphicDashboardIndicadorImagenesComponent implements OnInit {
               width: 1
             }
           }
+      },
+      toolbar: {
+        show: true,
+        offsetX: 0,
+        offsetY: 0,
+        tools: {
+          download: true,
+          selection: true,
+          zoom: true,
+          zoomin: true,
+          zoomout: true,
+          pan: true,
+          reset: true,
+          customIcons: []
+        },
+        export: {
+          csv: {
+            filename: undefined,
+            columnDelimiter: ',',
+            headerCategory: 'category',
+            headerValue: 'value',
+            dateFormatter(timestamp) {
+              return new Date(timestamp).toDateString()
+            }
+          },
+          svg: {
+            filename: undefined,
+          },
+          png: {
+            filename: undefined,
+          }
+        },
+        autoSelected: 'zoom'
       }
       },
       dataLabels: {
@@ -72,15 +105,12 @@ export class GraphicDashboardIndicadorImagenesComponent implements OnInit {
       },
       colors: this.colorPalette,
       title: {
+        floating: false,
         text: 'Indicador Imagenes',
+        align: 'left',
         style: {
-          fontSize: '20px',
-          fontFamily: 'Helvetica',
-          fontWeight: 500,
-          color: '#262626',
-        },
-        floating: true,
-        align: 'center'
+          fontSize: '18px'
+        }
       },
       series: [21, 23],
       labels: ['Enviadas', 'No Enviadas'],

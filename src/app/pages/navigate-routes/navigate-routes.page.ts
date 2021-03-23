@@ -42,8 +42,8 @@ export class NavigateRoutesPage implements OnInit {
   }
 
   buscarDirecciones() {
-    this.ionSegmentVisibility = true;
-    this.obtenerDirecciones();
+    /*this.ionSegmentVisibility = true;
+    this.obtenerDirecciones();*/
 
   }
   obtenerDirecciones() {this.svcLoadingPresent.presentLoading('Espere, porfavor...').then(res => {

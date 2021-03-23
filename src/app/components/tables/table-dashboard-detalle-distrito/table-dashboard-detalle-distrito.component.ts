@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 export interface Data {
   movies: string;
 }
@@ -6,6 +6,8 @@ export interface Data {
   selector: 'app-table-dashboard-detalle-distrito',
   templateUrl: './table-dashboard-detalle-distrito.component.html',
   styleUrls: ['./table-dashboard-detalle-distrito.component.scss'],
+  encapsulation: ViewEncapsulation.None
+
 })
 export class TableDashboardDetalleDistritoComponent implements OnInit {
   @Input('mobile') mobile: boolean

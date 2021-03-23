@@ -25,10 +25,12 @@
 @import "~@ionic/angular/css/text-transformation.css";
 @import "~@ionic/angular/css/flex-utils.css";
 
-/* Themeing Tables*/
-@import "~@swimlane/ngx-datatable/index.css";
-@import "~@swimlane/ngx-datatable/themes/material.scss";
-@import "~@swimlane/ngx-datatable/assets/icons.css";
+/* NGX Datatable CSS */
+@import '~assets/styles/ngx-datatable/_index.css';
+@import '~assets/styles/ngx-datatable/_dark.css';
+@import '~assets/styles/ngx-datatable/_material.css';
+@import '~assets/styles/ngx-datatable/_bootstrap.css';
+@import '~assets/styles/ngx-datatable/_icons.css';
 
 //custom
 .apexcharts-canvas {

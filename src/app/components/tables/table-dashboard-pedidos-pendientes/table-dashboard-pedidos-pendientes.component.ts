@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 export interface Data {
   movies: string;
 }
@@ -6,6 +6,7 @@ export interface Data {
   selector: 'app-table-dashboard-pedidos-pendientes',
   templateUrl: './table-dashboard-pedidos-pendientes.component.html',
   styleUrls: ['./table-dashboard-pedidos-pendientes.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TableDashboardPedidosPendientesComponent implements OnInit {
   @Input('mobile') mobile: boolean

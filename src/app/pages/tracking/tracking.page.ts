@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormsTrackingService } from '../../services/svcTracking/formsTracking.service';
 
 @Component({
   selector: 'app-tracking',
@@ -7,7 +8,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TrackingPage implements OnInit {
 
-  constructor() { }
+  constructor(
+    public svcFormsTracking: FormsTrackingService
+  ) { }
 
   ngOnInit() {
   }
@@ -17,10 +20,9 @@ export class TrackingPage implements OnInit {
   buscarConsultora(){
 
   }
-  buscarPedido(){
-
+  buscar( clave: string ){
   }
-  limpiarInput(){
-    
+  limpiar( clave: string ){
+    this.svcFormsTracking.formFiltros.get(clave).patchValue('');
   }
 }

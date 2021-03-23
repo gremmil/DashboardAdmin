@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Input, OnInit, ViewEncapsulation } from '@angular/core';
 export interface Data {
   movies: string;
 }
@@ -6,6 +6,7 @@ export interface Data {
   selector: 'app-table-tracking-pedidos-consultoras',
   templateUrl: './table-tracking-pedidos-consultoras.component.html',
   styleUrls: ['./table-tracking-pedidos-consultoras.component.scss'],
+  encapsulation: ViewEncapsulation.None
 })
 export class TableTrackingPedidosConsultorasComponent implements OnInit {
   @Input('mobile') mobile: boolean

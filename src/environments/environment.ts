@@ -7,8 +7,9 @@ import { HttpHeaders } from "@angular/common/http";
 export const environment = {
   production: false,
   Masters: {
-    listEvent: "https://transolyferserverprueba.azurewebsites.net/api/eventos-pedido",
-    listBusiness:  "http://wstransoly.azurewebsites.net/api/Transoly/ListarEmpresa"
+    listEvent: "https://wstransolytest.azurewebsites.net/api/Maestro/ListarEvento",
+    listBusiness:  "https://wstransolytest.azurewebsites.net/api/Maestro/ListarEmpresa",
+    listDistrict: "assets/data/distritos.json"
   },
   Direcionts: {
     list: "https://transolyferserverprueba.azurewebsites.net/api/direcciones-pedidos",
